@@ -4,7 +4,13 @@
     (:require
       [tailrecursion.hoplon.reload :refer [reload-all]]))
 
-  (reload-all 25)
+  (def articles {:total 422
+                 :ingested 419
+                 :fetched 0
+                 :errored 0
+                 :read 315})
+
+  (reload-all)
 </script>
 
 <!DOCTYPE html>
@@ -22,7 +28,24 @@
       <h1>gleam</h1>
     </header>
     <section>
-      <!-- dashboard widgets go here -->
+      <h2>Articles</h2>
+      <ul>
+        <li>
+          <label>Total:</label><text> ~{(get articles :total)}</text>
+        </li>
+        <li>
+          <label>Ingested:</label><text> ~{(get articles :ingested)}</text>
+        </li>
+        <li>
+          <label>Fetched:</label><text> ~{(get articles :fetched)}</text>
+        </li>
+        <li>
+          <label>Errored:</label><text> ~{(get articles :errored)}</text>
+        </li>
+        <li>
+          <label>Read:</label><text> ~{(get articles :read)}</text>
+        </li>
+      </ul>
     </section>
     <footer>
     </footer>

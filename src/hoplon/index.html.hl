@@ -4,12 +4,15 @@
     (:require
       [tailrecursion.hoplon.reload :refer [reload-all]]))
 
-  (def articles {:total 422
-                 :ingested 419
+  (def articles {:ingested 419
                  :fetched 0
                  :errored 0
                  :read 315})
 
+  (defc= total-articles (+ (get articles :ingested)
+                           (get articles :fetched)
+                           (get articles :errored)
+                           (get articles :reader)))
   (reload-all)
 </script>
 
@@ -31,7 +34,7 @@
       <h2>Articles</h2>
       <ul>
         <li>
-          <label>Total:</label><text> ~{(get articles :total)}</text>
+          <label>Total:</label><text> ~{total-articles}</text>
         </li>
         <li>
           <label>Ingested:</label><text> ~{(get articles :ingested)}</text>

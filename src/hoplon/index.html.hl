@@ -1,0 +1,30 @@
+<script type="text/hoplon">
+  (page "index.html"
+    (:refer-clojure :exclude [nth])
+    (:require
+      [tailrecursion.hoplon.reload :refer [reload-all]]))
+
+  (reload-all 25)
+</script>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gleam</title>
+
+    <link href="app.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <h1>gleam</h1>
+    </header>
+    <section>
+      <!-- dashboard widgets go here -->
+    </section>
+    <footer>
+    </footer>
+  </body>
+</html>

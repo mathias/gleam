@@ -2,15 +2,13 @@
   (page "index.html"
     (:refer-clojure :exclude [nth])
     (:require
+      [gleam.rpc :as gleam]
       [tailrecursion.hoplon.reload :refer [reload-all]]))
 
-  (def articles {:total 422
-                 :ingested 419
-                 :fetched 0
-                 :errored 0
-                 :read 315})
+  (defc articles gleam/articles)
 
   (reload-all)
+
 </script>
 
 <!DOCTYPE html>

@@ -2,11 +2,16 @@
   (:refer-clojure :exclude [defn])
   (:require [tailrecursion.castra :refer [defn ex error *session*]]))
 
-(def articles {:total 422
-               :ingested 419
-               :fetched 0
-               :errored 0
-               :read 315})
+(defn articles []
+  (let [ingested (rand-int 300)
+        fetched (rand-int 300)
+        errored (rand-int 300)
+        read (rand-int 300)]
+    {:total (+ ingested fetched errored read)
+     :ingested ingested
+     :fetched fetched
+     :errored errored
+     :read read}))
 
 (defn get-state []
-  {:articles articles})
+  {:articles (articles)})

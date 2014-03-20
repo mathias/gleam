@@ -5,10 +5,10 @@
       [gleam.rpc :as gleam]
       [tailrecursion.hoplon.reload :refer [reload-all]]))
 
-  (defc articles gleam/articles)
+  (defc= articles gleam/articles)
 
-  (reload-all)
-
+  ;;(reload-all)
+  (gleam/init)
 </script>
 
 <!DOCTYPE html>
